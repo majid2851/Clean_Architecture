@@ -6,8 +6,8 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class NoteFactory @Inject constructor(private val dateUtil:DateUtil){
-
+class NoteFactory @Inject constructor(private val dateUtil:DateUtil)
+{
     fun createSingleNote(
         id:String?=null,
         title:String,
@@ -21,6 +21,7 @@ class NoteFactory @Inject constructor(private val dateUtil:DateUtil){
             updated_at = dateUtil.getCurrentTimeStamp()
         )
     }
+
 
     fun createNoteList(numNotes:Int):List<Note>
     {
