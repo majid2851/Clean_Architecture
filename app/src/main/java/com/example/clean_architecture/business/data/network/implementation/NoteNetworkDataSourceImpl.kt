@@ -2,12 +2,13 @@ package com.example.clean_architecture.business.data.network.implementation
 
 import com.example.clean_architecture.business.data.network.abstraction.NoteNetworkDataSource
 import com.example.clean_architecture.business.domain.model.Note
+import com.example.clean_architecture.framework.datasource.network.abstraction.NoteFirestoreService
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class NoteNetworkDataSourceImpl
-    @Inject constructor(private val fireStoreService:NoteFireStoreService)
+    @Inject constructor(private val fireStoreService:NoteFirestoreService)
     :NoteNetworkDataSource
 {
     override suspend fun insertOrUpdateNote(note: Note) {
@@ -23,7 +24,7 @@ class NoteNetworkDataSourceImpl
     }
 
     override suspend fun insertMoreDeletedNotes(notes: List<Note>) {
-        fireStoreService.insertMoreDeletedNotes(notes)
+        fireStoreService.insertDeletedNotes(notes)
     }
 
     override suspend fun deleteDeletedNote(note: Note) {
@@ -31,14 +32,14 @@ class NoteNetworkDataSourceImpl
     }
 
     override suspend fun getDeletedNote(): List<Note> {
-        return fireStoreService.getDeletedNote()
+        return fireStoreService.getDeletedNotes()
     }
 
     override suspend fun deleteAllNotes() {
         fireStoreService.deleteAllNotes()
     }
 
-    override suspend fun searchNote(note: Note): Note {
+    override suspend fun searchNote(note: Note): Note? {
         return fireStoreService.searchNote(note)
     }
 

@@ -2,6 +2,7 @@ package com.example.clean_architecture.business.data.cache.implementation
 
 import com.example.clean_architecture.business.data.cache.abstraction.NoteCacheDataSource
 import com.example.clean_architecture.business.domain.model.Note
+import com.example.clean_architecture.framework.datasource.cache.abstraction.NoteDaoService
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -19,7 +20,7 @@ class NoteCacheDataSourceImpl @Inject
     }
 
     override suspend fun deleteMoreNotes(notes: List<Note>): Int {
-        return noteDaoService.delteMoreNotes(notes)
+        return noteDaoService.deleteNotes(notes)
     }
 
     override suspend fun updateNote(primaryKey: String, newTitle: String, newBody: String): Int {
@@ -27,10 +28,11 @@ class NoteCacheDataSourceImpl @Inject
     }
 
     override suspend fun searchNotes(query: String, filterAndOrder: String, page: Int): List<Note> {
-        return noteDaoService.searchNotes(query,filterAndOrder,page)
+        return noteDaoService.searchNotes()
     }
 
-    override suspend fun searchNoteById(primaryKey: String): Note {
+
+    override suspend fun searchNoteById(primaryKey: String): Note? {
         return noteDaoService.searchNoteById(primaryKey)
     }
 
