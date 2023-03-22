@@ -1,6 +1,13 @@
+
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+
+    id 'com.google.firebase.crashlytics'
+//    id 'com.google.gms.google-services'
 }
 
 android {
@@ -33,7 +40,6 @@ android {
 }
 
 dependencies {
-
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
@@ -41,4 +47,23 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+
+    kapt ("androidx.room:room-compiler:2.5.0")
+    kapt "com.google.dagger:dagger-compiler:2.45"
+//    kapt "androidx.lifecycle:lifecycle-compiler:${Versions.lifecycle_version}"
+    implementation 'com.google.dagger:dagger:2.45'
+
+
+    implementation ("com.google.firebase:firebase-firestore-ktx:24.4.4")
+    implementation ("com.google.firebase:firebase-auth:21.1.0")
+    implementation ("com.google.firebase:firebase-analytics-ktx:21.2.0")
+    implementation ("com.google.firebase:firebase-crashlytics:18.3.5")
+
+
+
+
+
+
+
 }

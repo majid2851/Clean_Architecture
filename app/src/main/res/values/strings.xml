@@ -1,3 +1,43 @@
 <resources>
-    <string name="app_name">Clean_Architecture</string>
+    <string name="app_name">Clean Notes</string>
+    <string name="title_dynamicfeature">DynamicFeature</string>
+
+    <string name="title_notes">Notes module</string>
+    <string name="title_reminders">Reminders module</string>
+    <string name="title_settings">Settings module</string>
+
+
+    <string name="module_notes_name">notes</string>
+    <string name="module_settings_name">settings</string>
+    <string name="module_reminders_name">reminders</string>
+
+    <string name="text_error">Error</string>
+    <string name="text_success">Success</string>
+    <string name="text_ok">OK</string>
+    <string name="text_cancel">Cancel</string>
+    <string name="text_info">Info</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="text_yes">Yes</string>
+    <string name="text_enter_a_title">Enter a title</string>
+    <string name="text_undo">Undo</string>
+
+
+    <string name="text_notes_go_here">Notes go here</string>
+    <string name="text_due_date">Due Date...</string>
+    <string name="text_note_title_cannot_be_empty">Note title can not be empty.</string>
+    <string name="text_Edit_body">Edit Body</string>
+    <string name="text_Edit_title">Edit Title</string>
+    <string name="text_Delete">Delete</string>
+    <string name="text_Filter">Filter</string>
+    <string name="text_Search">Search</string>
+
+    <string name="filter_options">Filter options</string>
+    <string name="filter_asc">ASC</string>
+    <string name="filter_desc">DESC</string>
+    <string name="filter_title">Title</string>
+    <string name="filter_date">Date</string>
+    <string name="filter_title_or_date">Filter by title or date</string>
+    <string name="filter_asc_desc">Ascending or descending order</string>
+    <string name="text_Apply">Apply</string>
+
 </resources>
