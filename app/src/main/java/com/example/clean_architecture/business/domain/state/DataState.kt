@@ -1,4 +1,3 @@
-package com.codingwithmitch.cleannotes.business.domain.state
 
 
 data class DataState<T>(

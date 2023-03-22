@@ -1,7 +1,7 @@
-package com.codingwithmitch.cleannotes.business.domain.state
+
 
 import android.view.View
-import com.codingwithmitch.cleannotes.util.TodoCallback
+import com.majid2851.clean_architecture.util.TodoCallback
 
 
 data class StateMessage(val response: Response)

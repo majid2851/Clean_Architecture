@@ -1,9 +1,7 @@
-package com.codingwithmitch.cleannotes.business.domain.state
-
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.codingwithmitch.cleannotes.util.printLogD
+import com.majid2851.clean_architecture.util.printLogD
 import kotlinx.android.parcel.IgnoredOnParcel
 import java.lang.IndexOutOfBoundsException
 
