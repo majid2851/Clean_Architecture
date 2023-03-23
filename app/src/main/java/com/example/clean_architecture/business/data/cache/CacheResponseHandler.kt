@@ -3,13 +3,14 @@ package com.example.clean_architecture.business.data.cache
 import DataState
 import MessageType
 import Response
-import StateEvent
 import UIComponentType
-import com.example.clean_architecture.business.data.cache.CacheErrors.CACHE_ERROR_DATA_NULL
+import com.majid2851.clean_architecture.business.data.cache.CacheErrors.CACHE_ERROR_DATA_NULL
+import com.majid2851.clean_architecture.business.data.cache.CacheResult
+import com.majid2851.clean_architecture.business.domain.state.StateEvent
 
 abstract class CacheResponseHandler<ViewState,Data>(
-    private val response:CacheResult<Data?>,
-    private val stateEvent:StateEvent?
+    private val response: CacheResult<Data?>,
+    private val stateEvent: StateEvent?
 )
 {
     suspend fun getResult():DataState<ViewState>?

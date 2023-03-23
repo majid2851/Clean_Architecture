@@ -1,8 +1,8 @@
 package com.example.clean_architecture.framework.presentation.notelist.state
 
-import StateEvent
 import StateMessage
 import com.example.clean_architecture.business.domain.model.Note
+import com.majid2851.clean_architecture.business.domain.state.StateEvent
 
 
 sealed class NoteListStateEvent: StateEvent {

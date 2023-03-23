@@ -3,7 +3,6 @@ package com.example.clean_architecture.business.interactors.notelist
 import DataState
 import MessageType
 import Response
-import StateEvent
 import UIComponentType
 import android.provider.ContactsContract.Data
 import com.example.clean_architecture.business.data.cache.CacheResponseHandler
@@ -14,6 +13,7 @@ import com.example.clean_architecture.business.domain.model.NoteFactory
 import com.example.clean_architecture.framework.presentation.notelist.state.NoteListViewState
 import com.majid2851.clean_architecture.business.data.util.safeApiCall
 import com.majid2851.clean_architecture.business.data.util.safeCacheCall
+import com.majid2851.clean_architecture.business.domain.state.StateEvent
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

@@ -2,6 +2,7 @@
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.majid2851.clean_architecture.business.domain.state.StateEvent
 import com.majid2851.clean_architecture.util.printLogD
 
 /**

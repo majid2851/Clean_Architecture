@@ -2,10 +2,10 @@ package com.codingwithmitch.cleannotes.business.data.network
 
 import DataState
 import Response
-import StateEvent
 import com.majid2851.clean_architecture.business.data.network.ApiResult
 import com.majid2851.clean_architecture.business.data.network.NetworkErrors.NETWORK_DATA_NULL
 import com.majid2851.clean_architecture.business.data.network.NetworkErrors.NETWORK_ERROR
+import com.majid2851.clean_architecture.business.domain.state.StateEvent
 
 
 abstract class ApiResponseHandler <ViewState, Data>(

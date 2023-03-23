@@ -1,4 +1,4 @@
-
+import com.majid2851.clean_architecture.business.domain.state.StateEvent
 
 data class DataState<T>(
     var stateMessage: StateMessage? = null,
