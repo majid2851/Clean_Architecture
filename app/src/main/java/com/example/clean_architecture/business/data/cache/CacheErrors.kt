@@ -1,4 +1,4 @@
-package com.example.clean_architecture.business.data.cache
+package com.majid2851.clean_architecture.business.data.cache
 
 object CacheErrors
 {

@@ -8,7 +8,7 @@ import UIComponentType
 import com.example.clean_architecture.business.data.cache.CacheErrors.CACHE_ERROR_DATA_NULL
 
 abstract class CacheResponseHandler<ViewState,Data>(
-    private val response:CacheResults<Data?>,
+    private val response:CacheResult<Data?>,
     private val stateEvent:StateEvent?
 )
 {
@@ -16,7 +16,7 @@ abstract class CacheResponseHandler<ViewState,Data>(
     {
         return when(response)
         {
-            is CacheResults.GenericError ->
+            is CacheResult.GenericError ->
             {
                 DataState.error(
                     response=Response(
@@ -27,7 +27,7 @@ abstract class CacheResponseHandler<ViewState,Data>(
                     ),stateEvent=stateEvent
                 )
             }
-            is CacheResults.SUCCESS ->
+            is CacheResult.SUCCESS ->
             {
                 if (response.value==null)
                 {
