@@ -83,13 +83,7 @@ class SearchNotesTest
                 page = 1
             )
             Assert.assertTrue(results?.containsAll(noteInCache)?:false)
-
-
         }
-
-
-
-
     }
     @Test
     fun randomQuery_success_confirmNoResults() = runBlocking {
