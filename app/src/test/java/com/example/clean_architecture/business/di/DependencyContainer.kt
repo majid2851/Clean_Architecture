@@ -14,7 +14,8 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.HashMap
 
-class DependencyContainer {
+class DependencyContainer
+{
 
     private val dateFormat = SimpleDateFormat("yyyy-MM-dd hh:mm:ss a", Locale.ENGLISH)
     val dateUtil = DateUtil(dateFormat)

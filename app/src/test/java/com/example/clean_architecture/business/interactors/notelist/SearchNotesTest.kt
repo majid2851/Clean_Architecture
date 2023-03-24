@@ -87,7 +87,6 @@ class SearchNotesTest
     }
     @Test
     fun randomQuery_success_confirmNoResults() = runBlocking {
-
         val query = "hthrthrgrkgenrogn843nn4u34n934v53454hrth"
         var results: ArrayList<Note>? = null
         searchNotes.searchNote(
@@ -106,10 +105,8 @@ class SearchNotesTest
                 }
             }
         })
-
         // confirm nothing was retrieved
         assertTrue { results?.run { size == 0 }?: true }
-
         // confirm there is notes in the cache
         val notesInCache = noteCacheDataSource.searchNotes(
             query = "",
