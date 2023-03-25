@@ -2,6 +2,7 @@ package com.example.clean_architecture.business.interactors.notelist
 
 import DataState
 import com.example.clean_architecture.business.data.cache.abstraction.NoteCacheDataSource
+import com.example.clean_architecture.business.data.getDummyData
 import com.example.clean_architecture.business.di.DependencyContainer
 import com.example.clean_architecture.business.domain.model.NoteFactory
 import com.example.clean_architecture.business.interactors.notelist.GetNumNotes.Companion.GET_NUM_NOTES_SUCCESS
