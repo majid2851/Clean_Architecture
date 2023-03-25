@@ -12,6 +12,7 @@ import com.majid2851.clean_architecture.business.data.network.NetworkErrors.NETW
 import com.majid2851.clean_architecture.util.cLog
 import com.majid2851.clean_architecture.util.printLogD
 import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.TimeoutCancellationException
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeout
@@ -19,7 +20,7 @@ import retrofit2.HttpException
 import java.io.IOException
 
 suspend fun <T> safeApiCall(
-    dispatcher: CoroutineDispatcher,
+    dispatcher: CoroutineDispatcher=Dispatchers.IO,
     apiCall: suspend () -> T?
 ): ApiResult<T?> {
     return withContext(dispatcher)
