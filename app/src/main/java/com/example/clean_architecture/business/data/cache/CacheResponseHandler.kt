@@ -4,6 +4,7 @@ import DataState
 import MessageType
 import Response
 import UIComponentType
+import com.example.clean_architecture.framework.presentation.notelist.state.NoteListViewState
 import com.majid2851.clean_architecture.business.data.cache.CacheErrors.CACHE_ERROR_DATA_NULL
 import com.majid2851.clean_architecture.business.data.cache.CacheResult
 import com.majid2851.clean_architecture.business.domain.state.StateEvent
@@ -48,6 +49,6 @@ abstract class CacheResponseHandler<ViewState,Data>(
         }
     }
 
-    abstract fun handleSuccess(resultObj: Data): DataState<ViewState>
+    abstract fun handleSuccess(resultObj: Data): DataState<NoteListViewState>?
 
 }
