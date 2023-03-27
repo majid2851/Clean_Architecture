@@ -48,6 +48,6 @@ abstract class CacheResponseHandler<ViewState,Data>(
         }
     }
 
-    abstract fun handleSuccess(resultObj: Data): DataState<ViewState>
+    abstract suspend fun handleSuccess(resultObj: Data): DataState<ViewState>
 
 }

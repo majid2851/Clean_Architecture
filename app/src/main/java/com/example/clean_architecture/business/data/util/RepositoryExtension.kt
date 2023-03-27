@@ -64,7 +64,7 @@ suspend fun <T> safeApiCall(
 
 
 suspend fun <T> safeCacheCall(
-    dispatcher: CoroutineDispatcher,
+    dispatcher: CoroutineDispatcher=Dispatchers.IO,
     cacheCall: suspend () -> T?
 ): CacheResult<T?> {
     return withContext(dispatcher) {
