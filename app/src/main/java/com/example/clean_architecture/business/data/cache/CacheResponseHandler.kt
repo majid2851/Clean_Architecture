@@ -4,6 +4,7 @@ import DataState
 import MessageType
 import Response
 import UIComponentType
+import com.example.clean_architecture.framework.presentation.notelist.state.NoteListViewState
 import com.majid2851.clean_architecture.business.data.cache.CacheErrors.CACHE_ERROR_DATA_NULL
 import com.majid2851.clean_architecture.business.data.cache.CacheResult
 import com.majid2851.clean_architecture.business.domain.state.StateEvent
@@ -13,7 +14,7 @@ abstract class CacheResponseHandler<ViewState,Data>(
     private val stateEvent: StateEvent?
 )
 {
-    suspend fun getResult():DataState<ViewState>
+    suspend fun getResult(): DataState<ViewState>?
     {
         return when(response)
         {
@@ -43,11 +44,12 @@ abstract class CacheResponseHandler<ViewState,Data>(
                 }else{
                     handleSuccess(resultObj=response.value)
                 }
+                return null
             }
 
         }
     }
 
-    abstract fun handleSuccess(resultObj: Data): DataState<ViewState>
+    abstract fun handleSuccess(resultObj: Data): DataState<ViewState>?
 
 }
