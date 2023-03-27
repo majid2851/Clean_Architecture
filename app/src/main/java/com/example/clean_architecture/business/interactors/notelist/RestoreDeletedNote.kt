@@ -64,9 +64,6 @@ class RestoreDeletedNote(
                         data = null,
                         stateEvent = stateEvent
                     )
-
-
-
                 }
             }
 
