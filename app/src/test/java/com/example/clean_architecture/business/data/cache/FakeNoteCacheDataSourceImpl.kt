@@ -44,6 +44,10 @@ constructor(
         }?: - 1 // -1 for failure
     }
 
+    override suspend fun getAllNotes(): List<Note> {
+        return ArrayList(notesData.values)
+    }
+
     override suspend fun deleteMoreNotes(notes: List<Note>): Int {
         var failOrSuccess = 1
         for(note in notes){

@@ -19,6 +19,10 @@ class NoteCacheDataSourceImpl @Inject
         return noteDaoService.deleteNote(primary)
     }
 
+    override suspend fun getAllNotes(): List<Note> {
+        return noteDaoService.getAllNotes()
+    }
+
     override suspend fun deleteMoreNotes(notes: List<Note>): Int {
         return noteDaoService.deleteNotes(notes)
     }

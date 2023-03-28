@@ -7,6 +7,7 @@ interface NoteCacheDataSource
     suspend fun insertNote(note: Note):Long
     suspend fun deleteNote(primary:String):Int
 
+    suspend fun getAllNotes():List<Note>
     suspend fun deleteMoreNotes(notes:List<Note>):Int
 
     suspend fun updateNote(primary: String,newTitle:String,
