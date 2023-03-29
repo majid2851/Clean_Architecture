@@ -15,7 +15,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.clean_architecture"
+        applicationId "com.majid2851.clean_architecture"
         minSdk 24
         targetSdk 33
         versionCode 1

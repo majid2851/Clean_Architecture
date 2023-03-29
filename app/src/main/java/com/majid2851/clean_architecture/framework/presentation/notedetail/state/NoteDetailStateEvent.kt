@@ -1,7 +1,7 @@
 package com.majid2851.clean_architecture.framework.presentation.notedetail.state
 
 import StateMessage
-import com.example.clean_architecture.business.domain.model.Note
+import com.majid2851.clean_architecture.business.domain.model.Note
 import com.majid2851.clean_architecture.business.domain.state.StateEvent
 
 sealed class NoteDetailStateEvent: StateEvent {

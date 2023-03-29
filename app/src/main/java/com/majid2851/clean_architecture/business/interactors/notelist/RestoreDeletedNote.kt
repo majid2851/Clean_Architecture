@@ -6,9 +6,9 @@ import Response
 import UIComponentType
 import com.majid2851.clean_architecture.business.data.cache.CacheResponseHandler
 import com.majid2851.clean_architecture.business.data.cache.abstraction.NoteCacheDataSource
-import com.example.clean_architecture.business.data.network.abstraction.NoteNetworkDataSource
-import com.example.clean_architecture.business.domain.model.Note
-import com.example.clean_architecture.framework.presentation.notelist.state.NoteListViewState
+import com.majid2851.clean_architecture.business.data.network.abstraction.NoteNetworkDataSource
+import com.majid2851.clean_architecture.business.domain.model.Note
+import com.majid2851.clean_architecture.framework.presentation.notelist.state.NoteListViewState
 import com.mag2851.clean_architecture.business.domain.state.ViewState
 import com.majid2851.clean_architecture.business.data.util.safeApiCall
 import com.majid2851.clean_architecture.business.data.util.safeCacheCall

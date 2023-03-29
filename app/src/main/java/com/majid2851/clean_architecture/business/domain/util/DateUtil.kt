@@ -21,7 +21,7 @@ class DateUtil @Inject constructor(
         return dateFormat.format(timeStamp.toDate())
     }
 
-    fun convertStringDateTo(date:String):Timestamp
+    fun convertStringDateToFirebaseTimeStamp(date:String):Timestamp
     {
         return Timestamp(dateFormat.parse(date))
     }

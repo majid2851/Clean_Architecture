@@ -1,8 +1,8 @@
 package com.majid2851.clean_architecture.framework.datasource.cache.mapper
 
-import com.example.clean_architecture.business.domain.model.Note
-import com.example.clean_architecture.business.domain.util.EntityMapper
-import com.example.clean_architecture.framework.datasource.cache.model.NoteCacheEntity
+import com.majid2851.clean_architecture.business.domain.model.Note
+import com.majid2851.clean_architecture.business.domain.util.EntityMapper
+import com.majid2851.clean_architecture.framework.datasource.cache.model.NoteCacheEntity
 import javax.inject.Inject
 import javax.inject.Singleton
 

@@ -2,8 +2,8 @@ package com.majid2851.clean_architecture.framework.presentation.notelist.state
 
 
 import android.os.Parcelable
-import com.example.clean_architecture.business.domain.model.Note
 import com.mag2851.clean_architecture.business.domain.state.ViewState
+import com.majid2851.clean_architecture.business.domain.model.Note
 import kotlinx.parcelize.Parcelize
 
 @Parcelize

@@ -1,11 +1,11 @@
 package com.majid2851.clean_architecture.framework.datasource.cache.implementation
 
-import com.codingwithmitch.cleannotes.framework.datasource.cache.database.NoteDao
-import com.codingwithmitch.cleannotes.framework.datasource.cache.database.returnOrderedQuery
-import com.example.clean_architecture.business.domain.model.Note
-import com.example.clean_architecture.business.domain.util.DateUtil
-import com.example.clean_architecture.framework.datasource.cache.abstraction.NoteDaoService
-import com.example.clean_architecture.framework.datasource.cache.mapper.CacheMapper
+import com.majid2851.clean_architecture.framework.datasource.cache.database.NoteDao
+import com.majid2851.clean_architecture.framework.datasource.cache.database.returnOrderedQuery
+import com.majid2851.clean_architecture.business.domain.model.Note
+import com.majid2851.clean_architecture.business.domain.util.DateUtil
+import com.majid2851.clean_architecture.framework.datasource.cache.abstraction.NoteDaoService
+import com.majid2851.clean_architecture.framework.datasource.cache.mapper.CacheMapper
 import javax.inject.Inject
 import javax.inject.Singleton
 

@@ -1,6 +1,6 @@
 package com.majid2851.clean_architecture.business.domain.model
 
-import com.example.clean_architecture.business.domain.util.DateUtil
+import com.majid2851.clean_architecture.business.domain.util.DateUtil
 import java.util.UUID
 import javax.inject.Inject
 import javax.inject.Singleton

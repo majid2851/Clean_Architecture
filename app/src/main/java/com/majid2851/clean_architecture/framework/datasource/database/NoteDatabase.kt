@@ -2,8 +2,8 @@ package com.majid2851.clean_architecture.framework.datasource.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.codingwithmitch.cleannotes.framework.datasource.cache.database.NoteDao
-import com.example.clean_architecture.framework.datasource.cache.model.NoteCacheEntity
+import com.majid2851.clean_architecture.framework.datasource.cache.database.NoteDao
+import com.majid2851.clean_architecture.framework.datasource.cache.model.NoteCacheEntity
 
 @Database(entities = [NoteCacheEntity::class], version = 1)
 abstract class NoteDatabase:RoomDatabase()

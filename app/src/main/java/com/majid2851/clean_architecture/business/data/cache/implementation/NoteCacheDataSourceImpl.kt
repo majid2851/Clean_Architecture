@@ -1,8 +1,8 @@
 package com.majid2851.clean_architecture.business.data.cache.implementation
 
 import com.majid2851.clean_architecture.business.data.cache.abstraction.NoteCacheDataSource
-import com.example.clean_architecture.business.domain.model.Note
-import com.example.clean_architecture.framework.datasource.cache.abstraction.NoteDaoService
+import com.majid2851.clean_architecture.business.domain.model.Note
+import com.majid2851.clean_architecture.framework.datasource.cache.abstraction.NoteDaoService
 import javax.inject.Inject
 import javax.inject.Singleton
 

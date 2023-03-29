@@ -1,7 +1,7 @@
 package com.majid2851.clean_architecture.framework.datasource.cache.abstraction
 
-import com.codingwithmitch.cleannotes.framework.datasource.cache.database.NOTE_PAGINATION_PAGE_SIZE
-import com.example.clean_architecture.business.domain.model.Note
+import com.majid2851.clean_architecture.framework.datasource.cache.database.NOTE_PAGINATION_PAGE_SIZE
+import com.majid2851.clean_architecture.business.domain.model.Note
 
 
 interface NoteDaoService {

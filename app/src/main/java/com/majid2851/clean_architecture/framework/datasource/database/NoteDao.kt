@@ -1,10 +1,10 @@
-package com.codingwithmitch.cleannotes.framework.datasource.cache.database
+package com.majid2851.clean_architecture.framework.datasource.cache.database
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.clean_architecture.framework.datasource.cache.model.NoteCacheEntity
+import com.majid2851.clean_architecture.framework.datasource.cache.model.NoteCacheEntity
 
 
 const val NOTE_ORDER_ASC: String = ""

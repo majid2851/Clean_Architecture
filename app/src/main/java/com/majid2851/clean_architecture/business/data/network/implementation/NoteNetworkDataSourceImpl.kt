@@ -1,8 +1,8 @@
 package com.majid2851.clean_architecture.business.data.network.implementation
 
-import com.example.clean_architecture.business.data.network.abstraction.NoteNetworkDataSource
-import com.example.clean_architecture.business.domain.model.Note
-import com.example.clean_architecture.framework.datasource.network.abstraction.NoteFirestoreService
+import com.majid2851.clean_architecture.business.data.network.abstraction.NoteNetworkDataSource
+import com.majid2851.clean_architecture.business.domain.model.Note
+import com.majid2851.clean_architecture.framework.datasource.network.abstraction.NoteFirestoreService
 import javax.inject.Inject
 import javax.inject.Singleton
 

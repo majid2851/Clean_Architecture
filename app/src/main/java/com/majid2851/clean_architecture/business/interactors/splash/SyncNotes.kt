@@ -4,9 +4,9 @@ import DataState
 import com.codingwithmitch.cleannotes.business.data.network.ApiResponseHandler
 import com.majid2851.clean_architecture.business.data.cache.CacheResponseHandler
 import com.majid2851.clean_architecture.business.data.cache.abstraction.NoteCacheDataSource
-import com.example.clean_architecture.business.data.network.abstraction.NoteNetworkDataSource
-import com.example.clean_architecture.business.domain.model.Note
-import com.example.clean_architecture.business.domain.util.DateUtil
+import com.majid2851.clean_architecture.business.data.network.abstraction.NoteNetworkDataSource
+import com.majid2851.clean_architecture.business.domain.model.Note
+import com.majid2851.clean_architecture.business.domain.util.DateUtil
 import com.majid2851.clean_architecture.business.data.util.safeApiCall
 import com.majid2851.clean_architecture.business.data.util.safeCacheCall
 import kotlinx.coroutines.Dispatchers.IO
