@@ -7,7 +7,7 @@ plugins {
     id 'kotlin-parcelize'
 
     id 'com.google.firebase.crashlytics'
-//    id 'com.google.gms.google-services'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -59,10 +59,13 @@ dependencies {
     implementation 'com.google.dagger:dagger:2.45'
 
 
-    implementation ("com.google.firebase:firebase-firestore-ktx:24.4.4")
-    implementation ("com.google.firebase:firebase-auth:21.1.0")
-    implementation ("com.google.firebase:firebase-analytics-ktx:21.2.0")
-    implementation ("com.google.firebase:firebase-crashlytics:18.3.5")
+    implementation ("com.google.firebase:firebase-firestore-ktx:24.4.5")
+    implementation ("com.google.firebase:firebase-auth:21.2.0")
+    implementation ("com.google.firebase:firebase-analytics-ktx:21.2.1")
+    implementation ("com.google.firebase:firebase-crashlytics:18.3.6")
+    implementation platform('com.google.firebase:firebase-bom:31.3.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4'
 
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
