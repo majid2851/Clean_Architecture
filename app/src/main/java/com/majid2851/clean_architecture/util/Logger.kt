@@ -24,6 +24,6 @@ fun cLog(msg: String?){
             FirebaseCrashlytics.getInstance().log(it)
         }
     }
-
 }
+
 

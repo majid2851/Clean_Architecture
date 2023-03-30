@@ -7,6 +7,7 @@ import com.majid2851.clean_architecture.business.domain.model.Note
 import com.majid2851.clean_architecture.framework.datasource.network.abstraction.NoteFirestoreService
 import com.majid2851.clean_architecture.framework.datasource.network.mappers.NetworkMapper
 import com.majid2851.clean_architecture.framework.datasource.network.model.NoteNetworkEntity
+import com.majid2851.clean_architecture.util.cLog
 import kotlinx.coroutines.tasks.await
 import java.lang.Exception
 import javax.inject.Inject
@@ -28,6 +29,9 @@ class NoteFireStoreServieImpl @Inject
             .collection(NOTES_COLLECTION)
             .document(entity.id)
             .set(entity)
+            .addOnFailureListener {
+                cLog(it.message)
+            }
             .await()
     }
 
@@ -46,7 +50,9 @@ class NoteFireStoreServieImpl @Inject
                 val documentRef=collectionRef.document(note.id)
                 batch.set(documentRef,entity)
             }
-       }
+       }.addOnFailureListener {
+           cLog(it.message)
+       }.await()
 
     }
 
@@ -57,6 +63,9 @@ class NoteFireStoreServieImpl @Inject
             .collection(NOTES_COLLECTION)
             .document()
             .delete()
+            .addOnFailureListener {
+                cLog(it.message)
+            }
             .await()
     }
 
@@ -68,6 +77,9 @@ class NoteFireStoreServieImpl @Inject
             .collection(NOTES_COLLECTION)
             .document(note.id)
             .set(entity)
+            .addOnFailureListener {
+                cLog(it.message)
+            }
             .await()
 
     }
@@ -86,7 +98,10 @@ class NoteFireStoreServieImpl @Inject
                 val documentRef=collectionRef.document(note.id)
                 batch.set(documentRef,entity)
             }
-        }
+        }.addOnFailureListener {
+            cLog(it.message)
+        }.await()
+
     }
 
     override suspend fun deleteDeletedNote(note: Note) {
@@ -97,6 +112,9 @@ class NoteFireStoreServieImpl @Inject
             .collection(NOTES_COLLECTION)
             .document(note.id)
             .delete()
+            .addOnFailureListener {
+                cLog(it.message)
+            }
             .await()
     }
 
@@ -109,6 +127,9 @@ class NoteFireStoreServieImpl @Inject
             .collection(NOTES_COLLECTION)
             .document(USER_ID)
             .delete()
+            .addOnFailureListener {
+                cLog(it.message)
+            }.await()
     }
 
     override suspend fun getDeletedNotes(): List<Note> {
@@ -118,18 +139,24 @@ class NoteFireStoreServieImpl @Inject
                 .document(USER_ID)
                 .collection(NOTES_COLLECTION)
                 .get()
-                .await().toObjects(NoteNetworkEntity::class.java)
+                .addOnFailureListener {
+                    cLog(it.message)
+                }.await()
+                .toObjects(NoteNetworkEntity::class.java)
         )
     }
 
-    override suspend fun searchNote(note: Note): Note? {
+    override suspend fun searchNote(note: Note): Note?
+    {
         return fireStore
             .collection(NOTES_COLLECTION)
             .document(USER_ID)
             .collection(NOTES_COLLECTION)
             .document(note.id)
             .get()
-            .await()
+            .addOnFailureListener {
+                cLog(it.message)
+            }.await()
             .toObject(NoteNetworkEntity::class.java)?.let {
                 networkMapper.mapFromEntity(it)
             }
@@ -142,7 +169,9 @@ class NoteFireStoreServieImpl @Inject
                 .document(USER_ID)
                 .collection(NOTES_COLLECTION)
                 .get()
-                .await().toObjects(NoteNetworkEntity::class.java)
+                .addOnFailureListener {
+                    cLog(it.message)
+                }.await().toObjects(NoteNetworkEntity::class.java)
         )
     }
 
