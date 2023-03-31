@@ -8,6 +8,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.majid2851.clean_architecture.business.domain.model.NoteFactory
 import com.majid2851.clean_architecture.di.TestAppComponent
+import com.majid2851.clean_architecture.framework.BaseTest
 import com.majid2851.clean_architecture.framework.datasource.network.abstraction.NoteFirestoreService
 import com.majid2851.clean_architecture.framework.datasource.network.implementation.NoteFireStoreServieImpl
 import com.majid2851.clean_architecture.framework.datasource.network.mappers.NetworkMapper
@@ -26,14 +27,20 @@ import javax.inject.Inject
 @ExperimentalCoroutinesApi
 @FlowPreview
 @RunWith(AndroidJUnit4ClassRunner::class)
-class NoteFirestoreServiceTests{
+class NoteFirestoreServiceTests:BaseTest()
+{
 
     // system in test
     private lateinit var noteFirestoreService: NoteFirestoreService
 
     // dependencies
-    val application: TestBaseApplication
-            = ApplicationProvider.getApplicationContext<Context>() as TestBaseApplication
+//    val application: TestBaseApplication
+//            = ApplicationProvider.getApplicationContext<Context>() as TestBaseApplication
+
+    override fun injectTest() {
+        (application.appComponent as TestAppComponent)
+            .inject(this)
+    }
 
     @Inject
     lateinit var firestore: FirebaseFirestore
@@ -48,8 +55,7 @@ class NoteFirestoreServiceTests{
     lateinit var networkMapper: NetworkMapper
 
     init {
-        (application.appComponent as TestAppComponent)
-            .inject(this)
+        injectTest()
         signIn()
     }
 
