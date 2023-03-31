@@ -1,7 +1,7 @@
 package com.majid2851.clean_architecture.business.data.network
 
-import com.example.clean_architecture.business.data.network.abstraction.NoteNetworkDataSource
-import com.example.clean_architecture.business.domain.model.Note
+import com.majid2851.clean_architecture.business.data.network.abstraction.NoteNetworkDataSource
+import com.majid2851.clean_architecture.business.domain.model.Note
 
 
 class FakeNoteNetworkDataSourceImpl

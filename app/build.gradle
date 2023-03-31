@@ -55,8 +55,15 @@ dependencies {
 
 
     kapt "com.google.dagger:dagger-compiler:2.45"
-//    kapt "androidx.lifecycle:lifecycle-compiler:${Versions.lifecycle_version}"
     implementation 'com.google.dagger:dagger:2.45'
+
+    androidTestImplementation "com.google.dagger:dagger:2.45"
+    androidTestImplementation 'com.google.dagger:dagger-android-support:2.45'
+    androidTestAnnotationProcessor 'com.google.dagger:dagger-android-processor:2.45'
+    kaptAndroidTest "com.google.dagger:dagger-compiler:2.45"
+
+    testAnnotationProcessor 'com.google.dagger:dagger-compiler:2.45'
+
 
 
     implementation ("com.google.firebase:firebase-firestore-ktx:24.4.5")

@@ -5,10 +5,10 @@ import com.majid2851.clean_architecture.business.data.NoteDataFactory
 import com.majid2851.clean_architecture.business.data.cache.FakeNoteCacheDataSourceImpl
 import com.majid2851.clean_architecture.business.data.cache.abstraction.NoteCacheDataSource
 import com.majid2851.clean_architecture.business.data.network.FakeNoteNetworkDataSourceImpl
-import com.example.clean_architecture.business.data.network.abstraction.NoteNetworkDataSource
-import com.example.clean_architecture.business.domain.model.Note
-import com.example.clean_architecture.business.domain.model.NoteFactory
-import com.example.clean_architecture.business.domain.util.DateUtil
+import com.majid2851.clean_architecture.business.data.network.abstraction.NoteNetworkDataSource
+import com.majid2851.clean_architecture.business.domain.model.Note
+import com.majid2851.clean_architecture.business.domain.model.NoteFactory
+import com.majid2851.clean_architecture.business.domain.util.DateUtil
 import com.majid2851.clean_architecture.util.isUnitTest
 import java.text.SimpleDateFormat
 import java.util.*
