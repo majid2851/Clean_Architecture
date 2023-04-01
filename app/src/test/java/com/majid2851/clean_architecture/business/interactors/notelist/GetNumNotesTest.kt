@@ -2,12 +2,11 @@ package com.majid2851.clean_architecture.business.interactors.notelist
 
 import DataState
 import com.majid2851.clean_architecture.business.data.cache.abstraction.NoteCacheDataSource
-import com.majid2851.clean_architecture.business.data.getDummyData
 import com.majid2851.clean_architecture.business.di.DependencyContainer
-import com.example.clean_architecture.business.domain.model.NoteFactory
-import com.example.clean_architecture.business.interactors.notelist.GetNumNotes.Companion.GET_NUM_NOTES_SUCCESS
-import com.example.clean_architecture.framework.presentation.notelist.state.NoteListStateEvent
-import com.example.clean_architecture.framework.presentation.notelist.state.NoteListViewState
+import com.majid2851.clean_architecture.business.domain.model.NoteFactory
+import com.majid2851.clean_architecture.business.interactors.notelist.GetNumNotes.Companion.GET_NUM_NOTES_SUCCESS
+import com.majid2851.clean_architecture.framework.presentation.notelist.state.NoteListStateEvent
+import com.majid2851.clean_architecture.framework.presentation.notelist.state.NoteListViewState
 import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.runBlocking
@@ -30,9 +29,9 @@ class GetNumNotesTest
     private val getNumNotes:GetNumNotes
 
     //dependencies
-    private val noteCacheDataSource: com.majid2851.clean_architecture.business.data.cache.abstraction.NoteCacheDataSource
+    private val noteCacheDataSource: NoteCacheDataSource
     private val dependencyContainer: DependencyContainer
-    private val noteFactory:NoteFactory
+    private val noteFactory: NoteFactory
 
     init {
         dependencyContainer = DependencyContainer()

@@ -1,19 +1,18 @@
 package com.majid2851.clean_architecture.business.interactors.notelist
 
 import DataState
+import com.majid2851.clean_architecture.business.data.cache.CacheErrors.CACHE_ERROR_UNKNOWN
 import com.majid2851.clean_architecture.business.data.cache.FORCE_GENERAL_FAILURE
 import com.majid2851.clean_architecture.business.data.cache.FORCE_NEW_NOTE_EXCEPTION
 import com.majid2851.clean_architecture.business.data.cache.abstraction.NoteCacheDataSource
-import com.example.clean_architecture.business.data.network.abstraction.NoteNetworkDataSource
+import com.majid2851.clean_architecture.business.data.network.abstraction.NoteNetworkDataSource
 import com.majid2851.clean_architecture.business.di.DependencyContainer
-import com.example.clean_architecture.business.domain.model.NoteFactory
-import com.example.clean_architecture.business.interactors.notelist.InsertNewNote.Companion.INSERT_NOTE_FAILED
-import com.example.clean_architecture.business.interactors.notelist.InsertNewNote.Companion.INSERT_NOTE_SUCCESS
-import com.example.clean_architecture.framework.presentation.notelist.state.NoteListStateEvent
-import com.example.clean_architecture.framework.presentation.notelist.state.NoteListViewState
-import com.majid2851.clean_architecture.business.data.cache.CacheErrors.CACHE_ERROR_UNKNOWN
+import com.majid2851.clean_architecture.business.domain.model.NoteFactory
+import com.majid2851.clean_architecture.business.interactors.notelist.InsertNewNote.Companion.INSERT_NOTE_FAILED
+import com.majid2851.clean_architecture.business.interactors.notelist.InsertNewNote.Companion.INSERT_NOTE_SUCCESS
+import com.majid2851.clean_architecture.framework.presentation.notelist.state.NoteListStateEvent
+import com.majid2851.clean_architecture.framework.presentation.notelist.state.NoteListViewState
 import kotlinx.coroutines.flow.FlowCollector
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert
 import org.junit.Test
@@ -47,7 +46,7 @@ class InsertNewNoteTest
 
     // dependencies
     private val dependencyContainer: DependencyContainer
-    private val noteCacheDataSource: com.majid2851.clean_architecture.business.data.cache.abstraction.NoteCacheDataSource
+    private val noteCacheDataSource: NoteCacheDataSource
     private val noteNetworkDataSource: NoteNetworkDataSource
     private val noteFactory: NoteFactory
 

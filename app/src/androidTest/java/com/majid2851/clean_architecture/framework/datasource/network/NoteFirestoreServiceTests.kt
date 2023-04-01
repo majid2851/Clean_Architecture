@@ -9,6 +9,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.majid2851.clean_architecture.business.domain.model.NoteFactory
 import com.majid2851.clean_architecture.di.TestAppComponent
 import com.majid2851.clean_architecture.framework.BaseTest
+import com.majid2851.clean_architecture.framework.datasource.data.NoteDataFactory
 import com.majid2851.clean_architecture.framework.datasource.network.abstraction.NoteFirestoreService
 import com.majid2851.clean_architecture.framework.datasource.network.implementation.NoteFireStoreServieImpl
 import com.majid2851.clean_architecture.framework.datasource.network.mappers.NetworkMapper
@@ -49,7 +50,7 @@ class NoteFirestoreServiceTests:BaseTest()
     lateinit var firebaseAuth: FirebaseAuth
 
     @Inject
-    lateinit var noteFactory: NoteFactory
+    lateinit var noteDataFactory: NoteFactory//: NoteDataFactory
 
     @Inject
     lateinit var networkMapper: NetworkMapper
@@ -77,7 +78,7 @@ class NoteFirestoreServiceTests:BaseTest()
 
     @Test
     fun insertSingleNote_CBS() = runBlocking{
-        val note = noteFactory.createSingleNote(
+        val note = noteDataFactory.createSingleNote(
             UUID.randomUUID().toString(),
             UUID.randomUUID().toString(),
             UUID.randomUUID().toString()

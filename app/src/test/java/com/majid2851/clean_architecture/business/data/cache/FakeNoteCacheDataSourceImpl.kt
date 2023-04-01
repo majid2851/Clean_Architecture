@@ -1,11 +1,8 @@
 package com.majid2851.clean_architecture.business.data.cache
 
-import com.codingwithmitch.cleannotes.framework.datasource.cache.database.NOTE_PAGINATION_PAGE_SIZE
-import com.majid2851.clean_architecture.business.data.cache.abstraction.NoteCacheDataSource
-import com.example.clean_architecture.business.domain.model.Note
-import com.example.clean_architecture.business.domain.util.DateUtil
-import kotlin.collections.ArrayList
-import kotlin.collections.HashMap
+import com.majid2851.clean_architecture.business.domain.model.Note
+import com.majid2851.clean_architecture.business.domain.util.DateUtil
+import com.majid2851.clean_architecture.framework.datasource.cache.database.NOTE_PAGINATION_PAGE_SIZE
 
 const val FORCE_DELETE_NOTE_EXCEPTION = "FORCE_DELETE_NOTE_EXCEPTION"
 const val FORCE_DELETES_NOTE_EXCEPTION = "FORCE_DELETES_NOTE_EXCEPTION"

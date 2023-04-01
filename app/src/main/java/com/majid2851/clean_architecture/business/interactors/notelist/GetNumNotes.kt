@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 class GetNumNotes(
-    private val noteCacheDataSource: com.majid2851.clean_architecture.business.data.cache.abstraction.NoteCacheDataSource
+    private val noteCacheDataSource: NoteCacheDataSource
 )
 {
     fun getNumNotes(
@@ -25,7 +25,7 @@ class GetNumNotes(
         {
             noteCacheDataSource.getNumNotes()
         }
-        val response = object : com.majid2851.clean_architecture.business.data.cache.CacheResponseHandler<NoteListViewState, Int>(
+        val response = object :  CacheResponseHandler<NoteListViewState, Int>(
             response = cacheResult,
             stateEvent = stateEvent
         )
