@@ -19,7 +19,7 @@ abstract class BaseTest
 
     // dependencies
     val application: TestBaseApplication
-            = ApplicationProvider.getApplicationContext<Context>() as TestBaseApplication
+            =  ApplicationProvider.getApplicationContext<Context>() as TestBaseApplication
     abstract fun injectTest()
 
 
