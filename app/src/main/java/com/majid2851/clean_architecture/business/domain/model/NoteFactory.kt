@@ -1,5 +1,6 @@
 package com.majid2851.clean_architecture.business.domain.model
 
+import com.majid2851.clean_architecture.business.data.util.fakeData
 import com.majid2851.clean_architecture.business.domain.util.DateUtil
 import java.util.UUID
 import javax.inject.Inject
@@ -39,6 +40,11 @@ class NoteFactory @Inject constructor(private val dateUtil:DateUtil)
         }
         return list
     }
+    fun getFakeData():List<Note>
+    {
+        return fakeData()
+    }
+
 
 
 }

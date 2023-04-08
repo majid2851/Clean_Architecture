@@ -32,7 +32,7 @@ class NoteCacheDataSourceImpl @Inject
     }
 
     override suspend fun searchNotes(query: String, filterAndOrder: String, page: Int): List<Note> {
-        return noteDaoService.searchNotes()
+        return noteDaoService.returnOrderedQuery(query, filterAndOrder, page)
     }
 
 
