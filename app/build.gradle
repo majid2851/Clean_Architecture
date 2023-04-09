@@ -96,4 +96,6 @@ dependencies {
     kapt ("androidx.room:room-compiler:2.5.1")
 
 
+
+    implementation ("androidx.fragment:fragment-ktx:1.5.6")
 }

@@ -1,8 +1,11 @@
 package com.majid2851.clean_architecture.cleannotes.di
 
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.room.Room
 import com.google.firebase.firestore.FirebaseFirestore
 import com.majid2851.clean_architecture.framework.datasource.database.NoteDatabase
+import com.majid2851.clean_architecture.framework.datasource.prefrences.PrefrencesKeys
 import com.majid2851.clean_architecture.framework.presentation.BaseApplication
 import dagger.Module
 import dagger.Provides
@@ -37,6 +40,20 @@ object ProductionModule {
     fun provideFirebaseFirestore(): FirebaseFirestore {
         return FirebaseFirestore.getInstance()
     }
+
+
+    @JvmStatic
+    @Singleton
+    @Provides
+    fun provideSharedPrefrences(
+        application: BaseApplication
+    ):SharedPreferences{
+        return application.getSharedPreferences(
+            PrefrencesKeys.NOTE_PREFERENCES,
+            Context.MODE_PRIVATE
+        )
+    }
+
 
 
 }
