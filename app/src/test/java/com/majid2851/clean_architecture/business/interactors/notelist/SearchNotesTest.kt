@@ -1,14 +1,14 @@
 package com.majid2851.clean_architecture.business.interactors.notelist
 
 import DataState
-import com.codingwithmitch.cleannotes.framework.datasource.cache.database.ORDER_BY_ASC_DATE_UPDATED
+import com.majid2851.clean_architecture.framework.datasource.cache.database.ORDER_BY_ASC_DATE_UPDATED
 import com.majid2851.clean_architecture.business.data.cache.FORCE_SEARCH_NOTES_EXCEPTION
 import com.majid2851.clean_architecture.business.data.cache.abstraction.NoteCacheDataSource
 import com.majid2851.clean_architecture.business.di.DependencyContainer
-import com.example.clean_architecture.business.domain.model.Note
-import com.example.clean_architecture.business.interactors.notelist.SearchNote.Companion.SEARCH_NOTES_NO_MATCHING_RESULTS
-import com.example.clean_architecture.framework.presentation.notelist.state.NoteListStateEvent
-import com.example.clean_architecture.framework.presentation.notelist.state.NoteListViewState
+import com.majid2851.clean_architecture.business.domain.model.Note
+import com.majid2851.clean_architecture.business.interactors.notelist.SearchNote.Companion.SEARCH_NOTES_NO_MATCHING_RESULTS
+import com.majid2851.clean_architecture.framework.presentation.notelist.state.NoteListStateEvent
+import com.majid2851.clean_architecture.framework.presentation.notelist.state.NoteListViewState
 import com.majid2851.clean_architecture.business.data.cache.CacheErrors
 import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.runBlocking
