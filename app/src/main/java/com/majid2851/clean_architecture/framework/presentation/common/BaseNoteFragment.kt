@@ -13,13 +13,15 @@ constructor(
     private @LayoutRes val layoutRes: Int
 ): Fragment() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(layoutRes, container, false)
-    }
+//    override fun onCreateView(
+//        inflater: LayoutInflater,
+//        container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        val view=inflater.inflate(layoutRes, container, false)
+//
+//        return view
+//    }
 
     abstract fun inject()
 
