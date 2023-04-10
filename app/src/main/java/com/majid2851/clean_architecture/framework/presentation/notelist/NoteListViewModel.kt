@@ -5,16 +5,20 @@ import Response
 import StateMessage
 import android.content.SharedPreferences
 import android.os.Parcelable
+import androidx.lifecycle.LiveData
 import com.majid2851.clean_architecture.business.domain.model.Note
 import com.majid2851.clean_architecture.business.domain.model.NoteFactory
 import com.majid2851.clean_architecture.business.domain.state.StateEvent
+import com.majid2851.clean_architecture.business.interactors.notelist.DeleteMultipleNotes.Companion.DELETE_NOTES_YOU_MUST_SELECT
 import com.majid2851.clean_architecture.business.interactors.notelist.NoteListInteractors
 import com.majid2851.clean_architecture.framework.datasource.cache.database.NOTE_FILTER_DATE_CREATED
 import com.majid2851.clean_architecture.framework.datasource.cache.database.NOTE_ORDER_DESC
 import com.majid2851.clean_architecture.framework.datasource.prefrences.PrefrencesKeys.Companion.NOTE_FILTER
 import com.majid2851.clean_architecture.framework.datasource.prefrences.PrefrencesKeys.Companion.NOTE_ORDER
 import com.majid2851.clean_architecture.framework.presentation.common.BaseViewModel
+import com.majid2851.clean_architecture.framework.presentation.notelist.state.NoteListInteractionManager
 import com.majid2851.clean_architecture.framework.presentation.notelist.state.NoteListStateEvent
+import com.majid2851.clean_architecture.framework.presentation.notelist.state.NoteListToolbarState
 import com.majid2851.clean_architecture.framework.presentation.notelist.state.NoteListViewState
 import com.majid2851.clean_architecture.util.printLogD
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -34,6 +38,12 @@ constructor(
     private val editor: SharedPreferences.Editor,
     private val sharedPreferences: SharedPreferences
 ): BaseViewModel<NoteListViewState>(){
+
+    val noteListInteractionManager =
+        NoteListInteractionManager()
+
+    val toolbarState: LiveData<NoteListToolbarState>
+        get() = noteListInteractionManager.toolbarState
 
     init {
         setNoteFilter(
@@ -138,6 +148,25 @@ constructor(
         }
         launchJob(stateEvent, job)
     }
+
+    /*
+        State
+     */
+    fun getSelectedNotes() = noteListInteractionManager.getSelectedNotes()
+
+    fun setToolbarState(state: NoteListToolbarState)
+            = noteListInteractionManager.setToolbarState(state)
+
+    fun isMultiSelectionStateActive()
+            = noteListInteractionManager.isMultiSelectionStateActive()
+
+    fun addOrRemoveNoteFromSelectedList(note: Note)
+            = noteListInteractionManager.addOrRemoveNoteFromSelectedList(note)
+
+    fun isNoteSelected(note: Note): Boolean
+            = noteListInteractionManager.isNoteSelected(note)
+
+    fun clearSelectedNotes() = noteListInteractionManager.clearSelectedNotes()
 
     /*
         Getters
@@ -341,9 +370,37 @@ constructor(
         editor.apply()
     }
 
+    private fun removeSelectedNotesFromList(){
+        val update = getCurrentViewStateOrNew()
+        update.noteList?.removeAll(getSelectedNotes())
+        setViewState(update)
+        clearSelectedNotes()
+    }
+
     /*
         StateEvent Triggers
      */
+
+
+    fun deleteNotes(){
+        if(getSelectedNotes().size > 0){
+            setStateEvent(NoteListStateEvent.DeleteMultipleNotesEvent(getSelectedNotes()))
+            removeSelectedNotesFromList()
+        }
+        else{
+            setStateEvent(
+                NoteListStateEvent.CreateStateMessageEvent(
+                    stateMessage = StateMessage(
+                        response = Response(
+                            message = DELETE_NOTES_YOU_MUST_SELECT,
+                            uiComponentType = UIComponentType.Toast(),
+                            messageType = MessageType.Info()
+                        )
+                    )
+                )
+            )
+        }
+    }
     fun isDeletePending(): Boolean{
         val pendingNote = getCurrentViewStateOrNew().notePendingDelete
         if(pendingNote != null){
@@ -418,6 +475,5 @@ constructor(
     }
 
 }
-
 
 
