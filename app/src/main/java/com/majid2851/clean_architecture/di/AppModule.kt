@@ -28,6 +28,7 @@ import com.majid2851.clean_architecture.framework.datasource.database.NoteDataba
 import com.majid2851.clean_architecture.framework.datasource.network.abstraction.NoteFirestoreService
 import com.majid2851.clean_architecture.framework.datasource.network.implementation.NoteFireStoreServieImpl
 import com.majid2851.clean_architecture.framework.datasource.network.mappers.NetworkMapper
+import com.majid2851.clean_architecture.framework.presentation.splash.NoteNetworkSyncManager
 import dagger.Module
 import dagger.Provides
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -210,6 +211,18 @@ object AppModule {
         )
     }
 
+    @JvmStatic
+    @Singleton
+    @Provides
+    fun provideNoteNetworkSyncManager(
+        syncNotes: SyncNotes,
+        deletedNotes: SyncDeletedNotes
+    ): NoteNetworkSyncManager {
+        return NoteNetworkSyncManager(
+            syncNotes,
+            deletedNotes
+        )
+    }
 
 
 }

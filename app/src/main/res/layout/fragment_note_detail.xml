@@ -33,7 +33,7 @@
 
             </View>
 
-            <com.yydcdut.markdown.MarkdownEditText
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="300dp"
@@ -158,7 +158,53 @@
                 app:layout_collapseMode="pin"
                 android:background="@color/colorPrimary">
 
-                <include layout="@layout/layout_note_detail_toolbar"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/toolbar_height"
+                    android:background="@color/colorPrimary">
+
+
+                    <ImageView
+                        android:layout_width="@dimen/toolbar_item_margin"
+                        android:layout_height="@dimen/toolbar_item_margin"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:id="@+id/toolbar_primary_icon"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/toolbar_primary_icon"
+                        app:layout_constraintRight_toLeftOf="@id/toolbar_secondary_icon"
+                        app:layout_constraintHorizontal_bias="0"
+                        android:id="@+id/tool_bar_title"
+                        android:textColor="@color/default_grey"
+                        android:layout_marginStart="@dimen/toolbar_title_margin"
+                        android:layout_marginEnd="@dimen/default_view_margin"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/page_title_size"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        />
+
+
+                    <ImageView
+                        android:layout_width="@dimen/toolbar_item_margin"
+                        android:layout_height="@dimen/toolbar_item_margin"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:id="@+id/toolbar_secondary_icon"
+                        android:layout_marginEnd="@dimen/default_view_margin"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             </androidx.appcompat.widget.Toolbar>
 

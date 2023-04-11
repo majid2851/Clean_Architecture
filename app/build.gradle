@@ -14,9 +14,9 @@ android {
     namespace 'com.example.clean_architecture'
     compileSdk 33
 
-//    buildFeatures {
-//        viewBinding true
-//    }
+    lintOptions {
+        checkReleaseBuilds false
+    }
 
     defaultConfig {
         applicationId "com.majid2851.clean_architecture"
@@ -116,4 +116,7 @@ dependencies {
 
     implementation("com.afollestad.material-dialogs:core:3.3.0")
     implementation("com.afollestad.material-dialogs:input:3.3.0")
+
+//    implementation ("com.yydcdut:markdown-processor:0.1.4")
+//    implementation ("com.yydcdut:rxmarkdown-wrapper:0.1.4")
 }

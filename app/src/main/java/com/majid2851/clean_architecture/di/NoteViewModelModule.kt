@@ -6,6 +6,7 @@ import com.majid2851.clean_architecture.business.domain.model.NoteFactory
 import com.majid2851.clean_architecture.business.interactors.notedetail.NoteDetailInteractors
 import com.majid2851.clean_architecture.business.interactors.notelist.NoteListInteractors
 import com.majid2851.clean_architecture.framework.presentation.common.NoteViewModelFactory
+import com.majid2851.clean_architecture.framework.presentation.splash.NoteNetworkSyncManager
 import dagger.Module
 import dagger.Provides
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -24,6 +25,7 @@ object NoteViewModelModule
     fun provideNoteViewModelFactory(
         noteListInteractors: NoteListInteractors,
         noteDetailInteractors: NoteDetailInteractors,
+        noteNetworkSyncManager:NoteNetworkSyncManager,
         noteFactory: NoteFactory,
         editor: SharedPreferences.Editor,
         sharedPreferences: SharedPreferences
@@ -31,6 +33,7 @@ object NoteViewModelModule
         return NoteViewModelFactory(
             noteListInteractors = noteListInteractors,
             noteDetailInteractors = noteDetailInteractors,
+            noteNetworkSyncManager=noteNetworkSyncManager,
             noteFactory = noteFactory,
             editor = editor,
             sharedPreferences = sharedPreferences

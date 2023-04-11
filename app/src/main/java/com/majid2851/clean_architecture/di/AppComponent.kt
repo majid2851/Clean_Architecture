@@ -6,6 +6,7 @@ import com.majid2851.clean_architecture.framework.presentation.BaseApplication
 import com.majid2851.clean_architecture.framework.presentation.MainActivity
 import com.majid2851.clean_architecture.framework.presentation.notedetail.NoteDetailFragment
 import com.majid2851.clean_architecture.framework.presentation.notelist.NoteListFragment
+import com.majid2851.clean_architecture.framework.presentation.splash.SplashFragment
 import dagger.BindsInstance
 import dagger.Component
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -32,6 +33,9 @@ interface AppComponent{
     }
 
     fun inject(mainActivity: MainActivity)
+
+
+    fun inject(mainActivity: SplashFragment)
     fun inject(fragment:NoteListFragment)
     fun inject(fragment:NoteDetailFragment)
 }

@@ -84,7 +84,7 @@ abstract class BaseViewModel<ViewState> : ViewModel()
     }
 
     fun setViewState(viewState: ViewState){
-        _viewState.value = viewState
+        _viewState.value = viewState!!
     }
 
     fun clearStateMessage(index: Int = 0){

@@ -16,10 +16,12 @@ import com.majid2851.clean_architecture.framework.datasource.cache.database.NOTE
 import com.majid2851.clean_architecture.framework.datasource.prefrences.PrefrencesKeys.Companion.NOTE_FILTER
 import com.majid2851.clean_architecture.framework.datasource.prefrences.PrefrencesKeys.Companion.NOTE_ORDER
 import com.majid2851.clean_architecture.framework.presentation.common.BaseViewModel
+import com.majid2851.clean_architecture.framework.presentation.common.NoteViewModelFactory
 import com.majid2851.clean_architecture.framework.presentation.notelist.state.NoteListInteractionManager
 import com.majid2851.clean_architecture.framework.presentation.notelist.state.NoteListStateEvent
 import com.majid2851.clean_architecture.framework.presentation.notelist.state.NoteListToolbarState
 import com.majid2851.clean_architecture.framework.presentation.notelist.state.NoteListViewState
+import com.majid2851.clean_architecture.framework.presentation.splash.NoteNetworkSyncManager
 import com.majid2851.clean_architecture.util.printLogD
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview

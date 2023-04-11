@@ -104,7 +104,7 @@ constructor(
         viewModelFactory
     }
 
-    lateinit var uiController: UIController
+    override lateinit var uiController: UIController
     private var listAdapter: NoteListAdapter? = null
     private var itemTouchHelper: ItemTouchHelper? = null
 
@@ -402,7 +402,8 @@ constructor(
         }
     }
 
-    private fun navigateToDetailFragment(selectedNote: Note){
+    private fun navigateToDetailFragment(selectedNote: Note)
+    {
         val bundle = bundleOf(NOTE_DETAIL_SELECTED_NOTE_BUNDLE_KEY to selectedNote)
             findNavController().navigate(
             R.id.action_note_list_fragment_to_noteDetailFragment,

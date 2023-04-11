@@ -8,6 +8,7 @@ import com.majid2851.clean_architecture.business.interactors.notedetail.NoteDeta
 import com.majid2851.clean_architecture.business.interactors.notelist.NoteListInteractors
 import com.majid2851.clean_architecture.framework.presentation.notedetail.NoteDetailViewModel
 import com.majid2851.clean_architecture.framework.presentation.notelist.NoteListViewModel
+import com.majid2851.clean_architecture.framework.presentation.splash.NoteNetworkSyncManager
 import com.majid2851.clean_architecture.framework.presentation.splash.SplashViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
@@ -22,6 +23,7 @@ class NoteViewModelFactory
 constructor(
     private val noteListInteractors: NoteListInteractors,
     private val noteDetailInteractors: NoteDetailInteractors,
+    private val noteNetworkSyncManager: NoteNetworkSyncManager,
     private val noteFactory: NoteFactory,
     private val editor: SharedPreferences.Editor,
     private val sharedPreferences: SharedPreferences
@@ -48,7 +50,7 @@ constructor(
             }
 
             SplashViewModel::class.java -> {
-                SplashViewModel() as T
+                SplashViewModel(noteNetworkSyncManager) as T
             }
 
             else -> {
