@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:startDestination="@id/splashFragment"
+    app:startDestination="@id/noteListFragment"
     >
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.codingwithmitch.cleannotes.framework.presentation.splash.SplashFragment">
+        android:name="com.majid2851.clean_architecture.framework.presentation.splash.SplashFragment">
 
         <action
             android:id="@+id/action_splashFragment_to_noteListFragment"
@@ -22,7 +22,7 @@
 
     <fragment
         android:id="@+id/noteListFragment"
-        android:name="com.codingwithmitch.cleannotes.framework.presentation.notelist.NoteListFragment"
+        android:name="com.majid2851.clean_architecture.framework.presentation.notelist.NoteListFragment"
         >
         <action
             android:id="@+id/action_note_list_fragment_to_noteDetailFragment"
@@ -35,7 +35,7 @@
 
     <fragment
         android:id="@+id/noteDetailFragment"
-        android:name="com.codingwithmitch.cleannotes.framework.presentation.notedetail.NoteDetailFragment"
+        android:name="com.majid2851.clean_architecture.framework.presentation.notedetail.NoteDetailFragment"
         >
 
         <action

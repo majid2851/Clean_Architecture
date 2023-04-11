@@ -6,10 +6,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.clean_architecture.R
-import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.majid2851.clean_architecture.framework.presentation.BaseApplication
 import com.majid2851.clean_architecture.framework.presentation.common.BaseNoteFragment
-import com.majid2851.clean_architecture.util.cLog
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 
