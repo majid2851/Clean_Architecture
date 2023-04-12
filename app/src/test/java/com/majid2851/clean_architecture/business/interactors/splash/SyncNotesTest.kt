@@ -1,10 +1,10 @@
 package com.majid2851.clean_architecture.business.interactors.splash
 
 import com.majid2851.clean_architecture.business.data.cache.abstraction.NoteCacheDataSource
-import com.example.clean_architecture.business.data.network.abstraction.NoteNetworkDataSource
+import com.majid2851.clean_architecture.business.data.network.abstraction.NoteNetworkDataSource
 import com.majid2851.clean_architecture.business.di.DependencyContainer
-import com.example.clean_architecture.business.domain.model.NoteFactory
-import com.example.clean_architecture.business.interactors.notedetail.UpdateNote
+import com.majid2851.clean_architecture.business.domain.model.NoteFactory
+import com.majid2851.clean_architecture.business.interactors.notedetail.UpdateNote
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
 import org.junit.jupiter.api.Assertions.assertTrue
