@@ -5,6 +5,7 @@ import MessageType
 import Response
 import UIComponentType
 import android.provider.ContactsContract.Data
+import android.util.Log
 import com.majid2851.clean_architecture.business.data.cache.CacheResponseHandler
 import com.majid2851.clean_architecture.business.data.cache.abstraction.NoteCacheDataSource
 import com.majid2851.clean_architecture.business.data.network.abstraction.NoteNetworkDataSource
@@ -42,7 +43,7 @@ class InsertNewNote(
                 noteCacheDataSource.insertNote(newNote)
             }
             val cacheResponse=object :
-                com.majid2851.clean_architecture.business.data.cache.CacheResponseHandler<NoteListViewState, Long>(
+                CacheResponseHandler<NoteListViewState, Long>(
                 response=cacheResult,
                 stateEvent=stateEvent
             ){
@@ -76,7 +77,7 @@ class InsertNewNote(
             }.getResult()
 
 
-            emit(cacheResponse!!)
+            emit(cacheResponse)
             updateNetword(cacheResponse.stateMessage?.response?.message,newNote)
 
         }
@@ -87,6 +88,7 @@ class InsertNewNote(
         {
             safeApiCall(IO)
             {
+                Log.i("insertNote-firebase",newNote.toString())
                 noteNetworkDataSource.insertOrUpdateNote(newNote)
             }
 

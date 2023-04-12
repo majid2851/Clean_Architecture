@@ -87,7 +87,8 @@ constructor(
 
     }
 
-    override fun setStateEvent(stateEvent: StateEvent) {
+    override fun setStateEvent(stateEvent: StateEvent)
+    {
 
         val job: Flow<DataState<NoteListViewState>?> = when(stateEvent){
 

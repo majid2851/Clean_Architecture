@@ -4,7 +4,6 @@ import android.util.Log
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.majid2851.clean_architecture.util.Constants.DEBUG
 import com.majid2851.clean_architecture.util.Constants.MAG2851
-import com.majid2851.clean_architecture.util.Constants.TAG
 import com.majid2851.clean_architecture.util.Constants.TEST2851
 
 var isUnitTest = false

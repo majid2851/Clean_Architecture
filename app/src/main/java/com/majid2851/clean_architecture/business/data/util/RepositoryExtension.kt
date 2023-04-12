@@ -1,5 +1,7 @@
 package com.majid2851.clean_architecture.business.data.util
 
+import android.util.Log
+import android.widget.Toast
 import com.majid2851.clean_architecture.business.data.cache.CacheConstants.CACHE_TIMEOUT
 import com.majid2851.clean_architecture.business.data.cache.CacheErrors.CACHE_ERROR_TIMEOUT
 import com.majid2851.clean_architecture.business.data.cache.CacheErrors.CACHE_ERROR_UNKNOWN
@@ -9,6 +11,7 @@ import com.majid2851.clean_architecture.business.data.network.ApiResult
 import com.majid2851.clean_architecture.business.data.network.NetworkConstants.REQUEST_TIMEOUT
 import com.majid2851.clean_architecture.business.data.network.NetworkErrors.NETWORK_ERROR_UNKNOWN
 import com.majid2851.clean_architecture.business.data.network.NetworkErrors.NETWORK_ERROR_TIMEOUT
+import com.majid2851.clean_architecture.framework.presentation.MainActivity
 import com.majid2851.clean_architecture.util.cLog
 import com.majid2851.clean_architecture.util.printLogD
 import kotlinx.coroutines.CoroutineDispatcher
@@ -32,6 +35,7 @@ suspend fun <T> safeApiCall(
                 ApiResult.Success(apiCall.invoke())
             }
         } catch (throwable: Throwable) {
+            Log.i("insertNote-firebaseErr",throwable.message.toString())
             throwable.printStackTrace()
             cLog(throwable.message)
             when (throwable) {

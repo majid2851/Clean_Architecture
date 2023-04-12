@@ -11,6 +11,7 @@ import com.majid2851.clean_architecture.util.cLog
 import kotlinx.coroutines.tasks.await
 import java.lang.Exception
 import javax.inject.Inject
+
 import javax.inject.Singleton
 
 @Singleton
@@ -179,8 +180,9 @@ class NoteFireStoreServieImpl @Inject
         const val NOTES_COLLECTION = "notes"
         const val USERS_COLLECTION = "users"
         const val DELETES_COLLECTION = "deletes"
-        const val USER_ID = "hRZy091OVBWOdNeojrHxlHRzWwB3" // hardcoded for single user
+        const val USER_ID = "6IHCn9420uekeaGp1P7wwJ6BNTB3" // hardcoded for single user
         const val EMAIL = "majidbagheri2851@gmail.com"
+        const val PASSWORD="12341234"
     }
 
 }
