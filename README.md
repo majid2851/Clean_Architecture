@@ -16,8 +16,12 @@ Another principle of Clean Architecture is the Dependency Inversion. This rule s
 
 I think one of the best benefits of using clean-architecture is that we can create unitTest easier for our usecases
 
+---------------------------------------------------------------------------------------------------------------------------------
+
+![Screenshot_1681731998](https://user-images.githubusercontent.com/46685643/232488409-d90cab74-4131-473a-8fec-577dc7f9522e.png)
 
 
+![Screenshot_1681732001](https://user-images.githubusercontent.com/46685643/232488413-9825f24e-67df-4bb4-bb99-ea6acb6045c9.png)
 
 
 
